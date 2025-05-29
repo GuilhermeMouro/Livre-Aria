@@ -1,9 +1,27 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    border-radius: 4px;
+}
+
+/* Estilo geral do corpo */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #ffffff;
@@ -11,6 +29,7 @@ body {
     padding-top: 80px;
 }
 
+/* Cabeçalho */
 header {
     background-color: #2e7d32;
     color: white;
@@ -23,11 +42,6 @@ header {
     top: 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 10;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
 }
 
 nav ul {
@@ -47,6 +61,7 @@ nav ul li a:hover {
     color: #ffcdd2;
 }
 
+/* Conteúdo principal */
 main {
     padding: 2rem;
     text-align: center;
@@ -57,6 +72,7 @@ h1 {
     color: #2e7d32;
 }
 
+/* Busca */
 .busca {
     margin-bottom: 2rem;
 }
@@ -71,7 +87,7 @@ input[type="text"] {
 
 button {
     padding: 0.6rem 1.2rem;
-    background-color: #c62828; /* vermelho */
+    background-color: #c62828;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -83,6 +99,7 @@ button:hover {
     background-color: #b71c1c;
 }
 
+/* Resultados */
 #resultados {
     margin-top: 2rem;
     display: flex;
@@ -106,4 +123,74 @@ button:hover {
     width: 100%;
     border-radius: 4px;
     margin-top: 0.5rem;
+}
+
+/* Página de detalhes */
+.detalhes-container {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.livro-detalhes {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 900px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+    position: relative;
+    min-height: 300px; /* Ajuste se necessário */
+}
+
+.livro-detalhes img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.livro-detalhes .info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+    padding-bottom: 3rem; /* Espaço para o botão */
+}
+
+.livro-detalhes .info h2 {
+    font-size: 2rem;
+    color: red;
+    margin-bottom: 1rem;
+}
+
+.livro-detalhes .info p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.livro-detalhes .info .botao-ler {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    text-align: center;
+}
+
+.livro-detalhes .info .botao-ler a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #2e7d32;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.livro-detalhes .info .botao-ler a:hover {
+    background-color: #1b5e20;
 }
