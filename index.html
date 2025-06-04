@@ -12,25 +12,18 @@
         <img src="imagens/livre-aria_logo.png" alt="Logo Livre-Aria">
         <span>LIVRE-ARIA</span>
     </div>
-    <nav>
-        <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
+    <div class="busca-header">
+        <input type="text" id="search" placeholder="Digite título ou autor">
+        <button>Pesquisar</button>
+    </div>
 </header>
 
+<main>
+    <h1>Bem-vindo(a) à LIVRE-ARIA!</h1>
+    <p>Explore nosso acervo e encontre o livro perfeito para sua leitura.</p>
+    <div id="resultados"></div>
+</main>
 
-    <main>
-        <h1>Buscar Livros</h1>
-        <div class="busca">
-            <input type="text" id="search" placeholder="Digite título ou autor">
-            <button onclick="buscarLivros()">Pesquisar</button>
-        </div>
-        <div id="resultados"></div>
-    </main>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
