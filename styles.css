@@ -1,11 +1,30 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Logo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1b5e20;
+    color: #333;
+    padding-top: 80px;
+}
+
+header {
+    background-color: #2e7d32;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -19,29 +38,6 @@
     height: 60px;
     width: auto;
     border-radius: 4px;
-}
-
-/* Estilo geral do corpo */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
-    color: #333;
-    padding-top: 80px;
-}
-
-/* Cabeçalho */
-header {
-    background-color: #2e7d32;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 10;
 }
 
 nav ul {
@@ -61,7 +57,34 @@ nav ul li a:hover {
     color: #ffcdd2;
 }
 
-/* Conteúdo principal */
+.busca-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.busca-header input[type="text"] {
+    padding: 0.4rem 0.8rem;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.busca-header button {
+    padding: 0.4rem 0.8rem;
+    background-color: #c62828;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.busca-header button:hover {
+    background-color: #b71c1c;
+}
+
 main {
     padding: 2rem;
     text-align: center;
@@ -69,10 +92,9 @@ main {
 
 h1 {
     margin-bottom: 1.5rem;
-    color: #2e7d32;
+    color: #c62828;
 }
 
-/* Busca */
 .busca {
     margin-bottom: 2rem;
 }
@@ -99,23 +121,22 @@ button:hover {
     background-color: #b71c1c;
 }
 
-/* Resultados */
 #resultados {
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
+    justify-items: start;
     justify-content: center;
 }
 
 #resultados > div {
     background-color: #fff;
     border: 1px solid #ccc;
-    border-left: 5px solid #2e7d32;
     padding: 1rem;
     border-radius: 8px;
     width: 250px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: left;
 }
 
@@ -125,7 +146,6 @@ button:hover {
     margin-top: 0.5rem;
 }
 
-/* Página de detalhes */
 .detalhes-container {
     padding: 2rem;
     display: flex;
@@ -139,12 +159,17 @@ button:hover {
     max-width: 900px;
     background-color: #fff;
     border: 1px solid #ccc;
+
     border-radius: 8px;
     padding: 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: left;
     position: relative;
-    min-height: 300px; /* Ajuste se necessário */
+    min-height: 300px;
+}
+
+.livro-detalhes p{
+        color: black;
 }
 
 .livro-detalhes img {
@@ -159,7 +184,7 @@ button:hover {
     flex-direction: column;
     justify-content: flex-start;
     flex: 1;
-    padding-bottom: 3rem; /* Espaço para o botão */
+    padding-bottom: 3rem;
 }
 
 .livro-detalhes .info h2 {
@@ -193,4 +218,97 @@ button:hover {
 
 .livro-detalhes .info .botao-ler a:hover {
     background-color: #1b5e20;
+}
+
+body.login-page {
+    background-color: #f5f5f5;
+    padding-top: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.login-container h1 {
+    color: #2e7d32;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #2e7d32;
+}
+
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+.sign-in {
+    padding: 0.75rem;
+    background-color: #c62828;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sign-in:hover {
+    background-color: #b71c1c;
+}
+
+.register-text {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.register-text a {
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.register-text a:hover {
+    color: #1b5e20;
+}
+
+p{
+    color: white;
 }
