@@ -8,21 +8,16 @@ document.addEventListener("DOMContentLoaded", function() {
 async function procurarLivros() {
     const input = document.getElementById("search");
     const procurar = input.value;
-
     const url = "https://openlibrary.org/search.json?q=" + encodeURIComponent(procurar) + "&has_fulltext=true&public_scan=true";
-
     const resposta = await fetch(url);
     const dados = await resposta.json();
-
     const sitio = document.getElementById("resultados");
-    sitio.innerHTML = "";
 
     const livros = dados.docs;
     let i = 0;
 
     while (i < livros.length && i < 10) {
         const livro = livros[i];
-
         let titulo = livro.title;
         let autor = "Autor desconhecido";
         if (livro.author_name && livro.author_name.length > 0) {
@@ -39,18 +34,32 @@ async function procurarLivros() {
         let id = partes[partes.length - 1];
 
         const div = document.createElement("div");
+        const a = document.createElement("a");
+        a.href = "detalhes.html?id=" + id;
+        a.style.textDecoration = "none";
+        a.style.color = "inherit";
 
-        let html = "";
-        html += '<a href="detalhes.html?id=' + id + '" style="text-decoration: none; color: inherit;">';
-        html += '<h3>' + titulo + '</h3>';
-        html += '<p><strong>Autor:</strong> ' + autor + '</p>';
+        const h3 = document.createElement("h3");
+        h3.textContent = titulo;
+
+        const p = document.createElement("p");
+        const strong = document.createElement("strong");
+        strong.textContent = "Autor: ";
+        p.appendChild(strong);
+        p.appendChild(document.createTextNode(autor));
+
+        a.appendChild(h3);
+        a.appendChild(p);
+
         if (capa) {
-            html += '<img src="https://covers.openlibrary.org/b/id/' + capa + '-M.jpg" alt="Capa de ' + titulo + '">';
+            const img = document.createElement("img");
+            img.src = "https://covers.openlibrary.org/b/id/" + capa + "-M.jpg";
+            img.alt = "Capa de " + titulo;
+            a.appendChild(img);
         }
-        html += '</a>';
-        html += '<hr>';
 
-        div.innerHTML = html;
+        div.appendChild(a);
+        div.appendChild(document.createElement("hr"));
         sitio.appendChild(div);
 
         i++;
